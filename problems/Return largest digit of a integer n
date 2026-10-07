@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+    int find(int n) {
+    int maxDigit =0;
+    int lastDigit;
+    while(n !=0){
+        lastDigit = n%10;
+        n = n/10;
+        if ( maxDigit<lastDigit){ maxDigit = lastDigit;}
+        if( maxDigit == 9) {
+            break; }
+    }
+     return maxDigit;   
+    }
+
+
+int main() {
+   
+int n = 75825367;
+    cout << find(n);
+    return 0;
+}
