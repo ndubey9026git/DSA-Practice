@@ -1,0 +1,28 @@
+class Solution {
+public:
+    double myPow(double x, int n) {
+
+        long long power = n;
+
+        long double base = x;
+
+        if(power < 0) {
+            base = 1.0L / base;
+            power = -power;
+        }
+
+        long double ans = 1.0L;
+
+        while(power > 0) {
+
+            if(power & 1) {
+                ans = ans * base;
+            }
+
+            base = base * base;
+            power = power >> 1;
+        }
+
+        return (double)ans;
+    }
+};
